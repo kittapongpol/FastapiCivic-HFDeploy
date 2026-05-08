@@ -57,19 +57,15 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "github-actions"
           git clone "https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$HF_SPACE_NAME" /tmp/hf-deploy
-          rsync -av --delete \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.pytest_cache' \
-            --exclude='__pycache__' \
-            --exclude='tests' \
-            --exclude='dataset' \
-            --exclude='artifacts' \
-            --exclude='docs' \
-            --exclude='scripts' \
-            ./ /tmp/hf-deploy/
+
+          rm -rf /tmp/hf-deploy/app /tmp/hf-deploy/models
+          rm -f /tmp/hf-deploy/Dockerfile /tmp/hf-deploy/requirements.txt /tmp/hf-deploy/README.md
+          mkdir -p /tmp/hf-deploy
+          cp -R app /tmp/hf-deploy/app
+          cp -R models /tmp/hf-deploy/models
+          cp Dockerfile requirements.txt README.md /tmp/hf-deploy/
+
           cd /tmp/hf-deploy
           git add .
           git commit -m "Deploy Civic generation classifier" || echo "No changes to deploy"
           git push
-
