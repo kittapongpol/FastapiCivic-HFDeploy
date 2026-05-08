@@ -1,0 +1,17 @@
+.git
+.github
+.pytest_cache
+__pycache__
+*.pyc
+.venv
+venv
+dataset
+artifacts
+docs
+scripts
+tests
+sample*.jpg
+sample*.jpeg
+sample*.png
+sample*.jfif
+models/civic_gen.onnx

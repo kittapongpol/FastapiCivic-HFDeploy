@@ -1,0 +1,27 @@
+# Python/cache
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local/editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+
+# Do not put training/report/demo files in the deploy repo
+dataset/
+artifacts/
+docs/
+scripts/
+sample*.jpg
+sample*.jpeg
+sample*.png
+sample*.jfif
+
+# Keep the deployed quantized model in Git for this small Space repo.
+# Do not add the large unquantized model.
+models/civic_gen.onnx
