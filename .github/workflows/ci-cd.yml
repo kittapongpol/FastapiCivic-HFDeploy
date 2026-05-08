@@ -56,7 +56,7 @@ jobs:
           test -n "$HF_SPACE_NAME"
           git config --global user.email "actions@github.com"
           git config --global user.name "github-actions"
-          git clone "https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$HF_SPACE_NAME" hf-deploy
+          git clone "https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$HF_SPACE_NAME" /tmp/hf-deploy
           rsync -av --delete \
             --exclude='.git' \
             --exclude='.github' \
@@ -67,8 +67,9 @@ jobs:
             --exclude='artifacts' \
             --exclude='docs' \
             --exclude='scripts' \
-            ./ hf-deploy/
-          cd hf-deploy
+            ./ /tmp/hf-deploy/
+          cd /tmp/hf-deploy
           git add .
           git commit -m "Deploy Civic generation classifier" || echo "No changes to deploy"
           git push
+
