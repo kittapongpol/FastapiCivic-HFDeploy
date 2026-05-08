@@ -1,19 +1,28 @@
+﻿---
+title: FastapiCivic
+emoji: 🚗
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
 # Honda Civic Generation Image Classification API
 
-โปรเจคนี้ทำตามโจทย์ Project Assignment เรื่อง High-Throughput Image Classification Service โดยเลือกหัวข้อจำแนกรุ่น Honda Civic 8 คลาส ได้แก่ `EG`, `EK`, `ES`, `FD`, `FB`, `FC`, `FE`, `FK`
+à¹‚à¸›à¸£à¹€à¸ˆà¸„à¸™à¸µà¹‰à¸—à¸³à¸•à¸²à¸¡à¹‚à¸ˆà¸—à¸¢à¹Œ Project Assignment à¹€à¸£à¸·à¹ˆà¸­à¸‡ High-Throughput Image Classification Service à¹‚à¸”à¸¢à¹€à¸¥à¸·à¸­à¸à¸«à¸±à¸§à¸‚à¹‰à¸­à¸ˆà¸³à¹à¸™à¸à¸£à¸¸à¹ˆà¸™ Honda Civic 8 à¸„à¸¥à¸²à¸ª à¹„à¸”à¹‰à¹à¸à¹ˆ `EG`, `EK`, `ES`, `FD`, `FB`, `FC`, `FE`, `FK`
 
 ## Labels
 
-| Label | Generation | Approx. year range | จุดสังเกตหลัก |
+| Label | Generation | Approx. year range | à¸ˆà¸¸à¸”à¸ªà¸±à¸‡à¹€à¸à¸•à¸«à¸¥à¸±à¸ |
 | --- | --- | --- | --- |
-| EG | 5th gen | 1991-1995 | ตัวถังเตี้ย ทรงโค้ง ไฟหน้าเรียว |
-| EK | 6th gen | 1995-2000 | เส้นตัวถังเรียบ ไฟหน้าโตขึ้น |
-| ES | 7th gen | 2000-2005 | ทรงซีดานสูงขึ้น กระจังหน้าเรียบ |
-| FD | 8th gen | 2005-2011 | หน้าปัดสองชั้น ทรงลิ่ม ไฟหน้าคม |
-| FB | 9th gen | 2011-2015 | เส้นข้างเรียบ ไฟท้ายกว้าง |
-| FC | 10th gen | 2015-2021 | ทรง fastback ไฟหน้า LED คม |
-| FE | 11th gen | 2021-present | เส้นตัวถังสุภาพ กระจังหน้าแนวนอน |
-| FK | 10th gen hatchback | 2016-2021 | ตัวถัง hatchback ท้ายสั้น เส้นหลังคาลาด |
+| EG | 5th gen | 1991-1995 | à¸•à¸±à¸§à¸–à¸±à¸‡à¹€à¸•à¸µà¹‰à¸¢ à¸—à¸£à¸‡à¹‚à¸„à¹‰à¸‡ à¹„à¸Ÿà¸«à¸™à¹‰à¸²à¹€à¸£à¸µà¸¢à¸§ |
+| EK | 6th gen | 1995-2000 | à¹€à¸ªà¹‰à¸™à¸•à¸±à¸§à¸–à¸±à¸‡à¹€à¸£à¸µà¸¢à¸š à¹„à¸Ÿà¸«à¸™à¹‰à¸²à¹‚à¸•à¸‚à¸¶à¹‰à¸™ |
+| ES | 7th gen | 2000-2005 | à¸—à¸£à¸‡à¸‹à¸µà¸”à¸²à¸™à¸ªà¸¹à¸‡à¸‚à¸¶à¹‰à¸™ à¸à¸£à¸°à¸ˆà¸±à¸‡à¸«à¸™à¹‰à¸²à¹€à¸£à¸µà¸¢à¸š |
+| FD | 8th gen | 2005-2011 | à¸«à¸™à¹‰à¸²à¸›à¸±à¸”à¸ªà¸­à¸‡à¸Šà¸±à¹‰à¸™ à¸—à¸£à¸‡à¸¥à¸´à¹ˆà¸¡ à¹„à¸Ÿà¸«à¸™à¹‰à¸²à¸„à¸¡ |
+| FB | 9th gen | 2011-2015 | à¹€à¸ªà¹‰à¸™à¸‚à¹‰à¸²à¸‡à¹€à¸£à¸µà¸¢à¸š à¹„à¸Ÿà¸—à¹‰à¸²à¸¢à¸à¸§à¹‰à¸²à¸‡ |
+| FC | 10th gen | 2015-2021 | à¸—à¸£à¸‡ fastback à¹„à¸Ÿà¸«à¸™à¹‰à¸² LED à¸„à¸¡ |
+| FE | 11th gen | 2021-present | à¹€à¸ªà¹‰à¸™à¸•à¸±à¸§à¸–à¸±à¸‡à¸ªà¸¸à¸ à¸²à¸ž à¸à¸£à¸°à¸ˆà¸±à¸‡à¸«à¸™à¹‰à¸²à¹à¸™à¸§à¸™à¸­à¸™ |
+| FK | 10th gen hatchback | 2016-2021 | à¸•à¸±à¸§à¸–à¸±à¸‡ hatchback à¸—à¹‰à¸²à¸¢à¸ªà¸±à¹‰à¸™ à¹€à¸ªà¹‰à¸™à¸«à¸¥à¸±à¸‡à¸„à¸²à¸¥à¸²à¸” |
 
 ## Project Structure
 
@@ -81,3 +90,4 @@ pytest -q
 ```
 
 The GitHub Actions workflow runs tests on every push and pull request, builds the Docker image, and deploys to Hugging Face Spaces when all tests pass on `main`.
+
